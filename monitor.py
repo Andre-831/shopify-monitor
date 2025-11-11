@@ -10,7 +10,7 @@ DISCORD_WEBHOOK = "your Discord webhook"
 
 STATE_FILE = "products_sizes.json"
 
-# list of Shopify storefront URLs:
+# list of Shopify sites:
 SITES = [
     'https://en.afew-store.com',
     'https://apbstore.com',
@@ -64,7 +64,7 @@ SITES = [
     'https://www.stussy.com'
 ]
 
-# how often to poll (in seconds)
+# in seconds
 POLL_INTERVAL = 10
 
 
@@ -167,7 +167,7 @@ def main():
                     sizes = ", ".join(v["title"] for v in prod["variants"] if v.get("available"))
                     pid   = str(prod["id"])
 
-                    # if there *are* sizes and they differ from last time  notify
+                    # if there are sizes and they differ from last time  notify
                     if pid not in previous or (sizes and sizes != previous[pid]):
                         #print(f"New item or update found on {site}: {prod['title']} ({prod['id']}) at {time.strftime('%H:%M:%S')}")
                         send_discord_embed(site, prod, sizes)
