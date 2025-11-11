@@ -6,8 +6,7 @@ import requests
 import sys
 
 
-# your Discord webhook for notifications:
-DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1389774491273662545/m2a8LHAbZb_5jg0oOU96NPv1dNPSJmUm0SzmThog25QzNTcw2V3cQfArpcEgUYzymRqY"
+DISCORD_WEBHOOK = "your Discord webhook"
 
 STATE_FILE = "products_sizes.json"
 
